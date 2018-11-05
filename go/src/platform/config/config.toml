@@ -1,0 +1,47 @@
+updateinterval = 30 #per second
+preparecount = 100 #需要准备好的用户数量
+[mysql]
+username = "root"                                       # mysql服务器用户名
+password = "XIAN@haxima605"                             # mysql服务器密码
+hostname = "192.168.0.191"                              # mysql服务器地址
+charset = "utf8"                                        # 编码格式
+database = "Haxima_Wallet"                              # 数据库名
+port = 3306
+[eth]
+rpcurl = "http://192.168.0.192:10606" #公链geth地址
+contractAccount = "0x68ff4e70754a022d7fb7c303e3801d6338c769aa" #合约地址
+enterpriseAccount = "0x53971FE4b78223D68F2eCEc8Eddb725C0b1F1D89" #合约绑定账户
+enterPrisePasswd = "Haxima000"
+enterPriseKey = "" #合约绑定账户keystore文件名
+keystoredir = "/keystore"
+transflag = false  #转账是否调用以太坊智能合约标志  false表示不调用智能合约，直接在平台完成转账  true表示需要调用智能合约转账，之后需要在平台记账
+gasprice = 1000000000 #转账手续费 = gasprice * gas
+multiplierprice = 1 #gasPrice增加倍数
+timeout = 15        #超时时间
+timeouttimes = 3    #超时次数
+confirmetimes = 6   #确认次数
+
+[server]
+readtimeout = 60
+writetimeout = 60
+port = 12306
+maxconn = 1000
+[log]
+loglev = "debug" #release
+logmax = 10 #rotate阈值 单位 M
+logPath = "" #log文件路径 为空表示不保存文件
+[bill]
+maxsize = 10 #rotate阈值 单位 M
+path = "./" #账单路径
+[https]
+sslkeypath = "platform/https_auth/haxima_server.key"    # 服务器证书私钥
+sslcertpath = "platform/https_auth/haxima_server.crt"   # CA签发的证书路径
+[ftp]
+username = "root"                                       # ftp服务器用户名
+password = "Haxima605"                                  # ftp服务器密码
+hostname = "192.168.0.191"                              # ftp服务器地址
+port = 22                                               # ftp服务器端
+logpath = "/log"                                        # 日志文件存储目录
+optlogpath = "/log/opt_log"                             # 操作日志存储目录
+logzippath = "/log/log_zip_bak"                         # 日志压缩包备份目录
+
